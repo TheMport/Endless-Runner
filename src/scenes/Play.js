@@ -3,7 +3,7 @@
 class Play extends Phaser.Scene {
     constructor() {
         super('Play')
-        this.speedIncreaseTime = 1000 // Time in ms to increase speed
+        this.speedIncreaseTime = 1000 // Time increase speed
         this.speedIncrement = 20 // Speed increase amount
         this.lastSpeedIncrease = 0 // Last time the speed was increased
     }
@@ -89,8 +89,7 @@ class Play extends Phaser.Scene {
         // Update background scrolling in the existing tileSprite instead of creating a new one
         this.background.tilePositionX += this.player.body.deltaX() * 0.5
 
-        // Additional game logic
-        //this.physics.world.createDebugGraphic();
+        //this.physics.world.createDebugGraphic()
         this.handleBackgroundScrolling()
 
         this.platformManager.update()
@@ -121,7 +120,7 @@ class Play extends Phaser.Scene {
                 const currentVelocityX = this.player.body.velocity.x
                 this.player.setVelocityY(-300)
                 this.player.setVelocityX(currentVelocityX)
-                this.increaseScore(5) // Increase score by 10 on jump
+                this.increaseScore(5) // +points
             }
         })
     }
